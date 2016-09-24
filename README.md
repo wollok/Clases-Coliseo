@@ -37,8 +37,6 @@ Cuando un gladiador se pelea con otro lo que hace es atacarlo. Luego de sufrir l
 Permitir que en el coliseo haya varios grupos de gladiadores que puedan pelear contra otros grupos. De los grupos se conoce también un nombre que los representa y se registra la cantidad de peleas en las que participó. Un grupo es capaz de manejar a sus miembros (agregar o quitar gladiadores).
 Las peleas son a tres rounds, en cada round cada grupo elige a su campeón para que pelee con el campeón adversario. El campeón debe ser el más fuerte del grupo que pueda combatir (si aún cuenta con puntos de vida disponibles)
 
-
-Crear un Grupo
 Un gladiador puede crear un grupo juntándose con otro gladiador y definiendo el nombre del grupo.
 
 ### El Coliseo
