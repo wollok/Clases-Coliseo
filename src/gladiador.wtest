@@ -1,0 +1,16 @@
+import fixture.*
+
+test "un Mirmillon con hacha y escudo tiene poderAtaque 20.5" {
+	var mirmi = fixture.crearMirmiConHacha()
+	assert.equals(20.5, mirmi.poderAtaque())
+}
+
+test
+"un Mirmillon con hacha y escudo ataca a un demicherius con destreza 10 y este queda con x vida"
+{
+	var mirmi = fixture.crearMirmiConHacha()
+	var dima = fixture.crearDimaConMartillo()
+	mirmi.atacar(dima)
+	assert.equals(84.5, dima.vida())
+
+}
