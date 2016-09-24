@@ -39,4 +39,4 @@ Los combates son a tres rounds, en cada round cada grupo elige a su campeón par
 Un gladiador puede crear un grupo juntándose con otro gladiador y definiendo el nombre del grupo.
 
 ### El Coliseo
-El coliseo puede organizar combates entre grupos de gladiadores, aunque a veces tambien hace combatir a gladiadores sueltos. Los dueños del coliseo no son unos tiranos así que también curan a los gladiadores, ya sea en grupos o solos.
+El coliseo puede organizar combates entre grupos de gladiadores, aunque a veces tambien hace combatir a un grupo contra un gladiador suelto. Los dueños del coliseo no son unos tiranos así que también curan a los gladiadores, ya sea en grupos o solos.
