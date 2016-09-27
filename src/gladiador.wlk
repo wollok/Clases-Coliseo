@@ -1,4 +1,5 @@
 import armas.*
+import coliseo.*
 
 class Mirmillon {
 	const destreza = 15
@@ -8,25 +9,16 @@ class Mirmillon {
 	var armadura
 
 	constructor(laFuerza, unArma, unaArmadura) {
-		fuerza = laFuerza arma = unArma armadura = unaArmadura
+		fuerza = laFuerza 
+		arma = unArma 
+		armadura = unaArmadura
 	}
 
-	method vida() {
-		return vida
-	}
+	method vida() {	return vida	}
+	
+	method puedeCombatir() {return vida > 0}
 
-	method destreza() {
-		return destreza
-	}
-
-	//?
-	method fuerza(nuevaFuerza) {
-		fuerza = nuevaFuerza
-	}
-
-	method fuerza() {
-		return fuerza
-	}
+	method destreza() {	return destreza }
 
 	method poderAtaque() {
 		return arma.poderAtaque() + fuerza
@@ -38,10 +30,6 @@ class Mirmillon {
 
 	method arma(armaNueva) {
 		arma = armaNueva
-	}
-
-	method arma() {
-		return arma
 	}
 
 	method armadura(nueva) {
@@ -57,6 +45,19 @@ class Mirmillon {
 		self.atacar(unGladiador)
 		unGladiador.atacar(self)
 	}
+	method masFuerte(){
+		return self
+	}
+	method curar(){
+		vida = 100
+	}
+	method armarGrupoCon(gladiador) {
+		const grupo = new Grupo("Mirmillolandia")
+		grupo.agregarGladiador(self)
+		grupo.agregarGladiador(gladiador)
+		return grupo
+	}
+	
 }
 
 class Dimachaerus {
@@ -69,9 +70,9 @@ class Dimachaerus {
 		destreza = unaDestreza
 	}
 
-	method vida() {
-		return vida
-	}
+	method vida() {	return vida	}
+	
+	method puedeCombatir() {return vida > 0}
 
 	method darArma(nuevaArma) {
 		armas.add(nuevaArma)
@@ -99,5 +100,17 @@ class Dimachaerus {
 	method pelearContra(unGladiador) {
 		self.atacar(unGladiador)
 		unGladiador.atacar(self)
+	}
+	method masFuerte(){
+		return self
+	}
+	method curar(){
+		vida = 100
+	}
+	method armarGrupoCon(gladiador) {
+		const grupo = new Grupo("D-"+(self.poderAtaque()+gladiador.poderAtaque()))
+		grupo.agregarGladiador(self)
+		grupo.agregarGladiador(gladiador)
+		return grupo
 	}
 }

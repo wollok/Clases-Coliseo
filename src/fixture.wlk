@@ -3,13 +3,22 @@ import armas.*
 
 object fixture {
 	method crearMirmiConHacha(){
-		var hacha = new ArmaFilosa(1, 0.5)
-		return new Mirmillon(20, hacha, unEscudo)
+		const hacha = new ArmaFilosa(2, 1)
+		return new Mirmillon(20, hacha, escudo)
 	}
-	method crearDimaConMartillo(){
-		var martillo = new ArmaContundente(10) 
-		var dima = new Dimachaerus(10) 
-		dima.darArma(martillo)
+	method crearDimaConMartillos(){
+		const dima = new Dimachaerus(10) 
+		dima.darArma(new ArmaContundente(10))
+		dima.darArma(new ArmaContundente(20))
+		return dima
+	}
+	
+	method crearMirmiConCasco(){
+		return new Mirmillon(20, new ArmaContundente(20), casco)
+	}
+	method crearDimaMuyArmado(){
+		const dima = new Dimachaerus(10) 
+		10.times{dima.darArma(new ArmaFilosa(3,2))}
 		return dima
 	}
 }

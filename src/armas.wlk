@@ -1,10 +1,10 @@
-
 class ArmaFilosa {
 	var longitud
 	var filo
 
 	constructor(long, fi) {
-		filo = fi longitud = long
+		filo = fi 
+		longitud = long
 	}
 	method poderAtaque() {
 		return longitud * filo
@@ -23,13 +23,13 @@ class ArmaContundente {
 	}
 }
 
-object unCasco {
+object casco {
 	method defensa(unGladiador) {
 		return 5
 	}
 }
 
-object unEscudo {
+object escudo {
 	const defensa = 10
 	method defensa(unGladiador) {
 		return defensa + unGladiador.destreza() / 10
