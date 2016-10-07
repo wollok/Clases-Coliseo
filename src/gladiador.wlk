@@ -74,7 +74,7 @@ class Dimachaerus {
 	
 	method puedeCombatir() {return vida > 0}
 
-	method darArma(nuevaArma) {
+	method arma(nuevaArma) {
 		armas.add(nuevaArma)
 	}
 

@@ -1,3 +1,4 @@
+//import gladiadorHerencia.*
 import gladiador.*
 import armas.*
 
@@ -8,8 +9,8 @@ object fixture {
 	}
 	method crearDimaConMartillos(){
 		const dima = new Dimachaerus(10) 
-		dima.darArma(new ArmaContundente(10))
-		dima.darArma(new ArmaContundente(20))
+		dima.arma(new ArmaContundente(10))
+		dima.arma(new ArmaContundente(20))
 		return dima
 	}
 	
@@ -18,7 +19,7 @@ object fixture {
 	}
 	method crearDimaMuyArmado(){
 		const dima = new Dimachaerus(10) 
-		10.times{dima.darArma(new ArmaFilosa(3,2))}
+		10.times{dima.arma(new ArmaFilosa(3,2))}
 		return dima
 	}
 }
