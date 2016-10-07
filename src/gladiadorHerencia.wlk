@@ -32,13 +32,13 @@ class Gladiador {
 	method defensa()
 
 	method armarGrupoCon(gladiador) {
-		const grupo = self.crearGrupo(gladiador)
+		const grupo = new Grupo(self.nombreGrupo(gladiador))
 		grupo.agregarGladiador(self)
 		grupo.agregarGladiador(gladiador)
 		return grupo
 	}
 	
-	method crearGrupo(gladiador)
+	method nombreGrupo(gladiador)
 	
 	method pelearContra(unGladiador) {
 		self.atacar(unGladiador)
@@ -77,8 +77,8 @@ class Mirmillon inherits Gladiador {
 		armadura = nueva
 	}
 
-	override method crearGrupo(gladiador) {
-		return new Grupo("Mirmillolandia")
+	override method nombreGrupo(gladiador) {
+		return "Mirmillolandia"
 	}
 	
 }
@@ -108,7 +108,7 @@ class Dimachaerus inherits Gladiador{
 		return destreza / 2
 	}
 	
-	override method crearGrupo(gladiador) {
-		return new Grupo("D-"+(self.poderAtaque()+gladiador.poderAtaque()))
+	override method nombreGrupo(gladiador) {
+		return "D-"+(self.poderAtaque()+gladiador.poderAtaque())
 	}
 }
