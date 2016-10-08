@@ -1,6 +1,12 @@
 import armas.*
 import coliseo.*
 
+class GladiadorMuertoException inherits Exception { 
+	constructor(leyenda) = super(leyenda)
+}
+
+class GladiadorDesarmadoException inherits Exception { }
+
 class Gladiador {
 	var destreza
 	var fuerza
@@ -13,14 +19,19 @@ class Gladiador {
 	method destreza() {return destreza}
 	
 	method curar(){
+		if (!self.puedeCombatir()) 
+			throw new GladiadorMuertoException("si, se murio") 
 		vida = 100
 	}
 
 	method atacar(unGladiador) {
+		
+		if (!self.puedeCombatir())
+			throw new GladiadorMuertoException("si, se murio") 
 		unGladiador.recibirAtaque(self.poderAtaque())
 	}
 	method recibirAtaque(poderAtaque) {
-		vida = vida - ( poderAtaque - self.defensa() )
+		vida = vida - (( poderAtaque - self.defensa() )).max(0)
 	}
 
 	method poderAtaque() {
@@ -62,6 +73,9 @@ class Mirmillon inherits Gladiador {
 	}
 
 	override method poderArmas() {
+		if (arma == null) 
+			throw new GladiadorDesarmadoException() 
+		
 		return arma.poderAtaque()
 	}
 

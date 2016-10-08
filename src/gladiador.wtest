@@ -1,4 +1,5 @@
 import fixture.*
+import gladiadorHerencia.*
 
 test "un Mirmillon con hacha y escudo tiene poderAtaque 22" {
 	const mirmi = fixture.crearMirmiConHacha()
@@ -48,3 +49,10 @@ test "el mas fuerte del grupo es el dimachaerus" {
 	assert.equals(dima, grupo.masFuerte())
 }
 
+test "un gladiador muerto no ataca" {
+	var dima = fixture.crearDimaConMartillos()
+	var mirmi = fixture.crearMirmiConHacha()
+	10.times{dima.atacar(mirmi)}
+	assert.throwsExceptionWithType( new GladiadorMuertoException(""), {mirmi.atacar(dima)}) 
+	//assert.throwsException({mirmi.atacar(dima)}) 
+}

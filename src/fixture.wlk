@@ -1,5 +1,5 @@
-//import gladiadorHerencia.*
-import gladiador.*
+import gladiadorHerencia.*
+//import gladiador.*
 import armas.*
 
 object fixture {
