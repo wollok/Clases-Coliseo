@@ -54,5 +54,6 @@ test "un gladiador muerto no ataca" {
 	var mirmi = fixture.crearMirmiConHacha()
 	10.times{dima.atacar(mirmi)}
 	assert.throwsExceptionWithType( new GladiadorMuertoException(""), {mirmi.atacar(dima)}) 
+	//assert.throwsExceptionWithType( new GladiadorMuertoException(), {mirmi.atacar(dima)}) 
 	//assert.throwsException({mirmi.atacar(dima)}) 
 }

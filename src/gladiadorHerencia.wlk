@@ -19,8 +19,6 @@ class Gladiador {
 	method destreza() {return destreza}
 	
 	method curar(){
-		if (!self.puedeCombatir()) 
-			throw new GladiadorMuertoException("si, se murio") 
 		vida = 100
 	}
 
@@ -73,9 +71,6 @@ class Mirmillon inherits Gladiador {
 	}
 
 	override method poderArmas() {
-		if (arma == null) 
-			throw new GladiadorDesarmadoException() 
-		
 		return arma.poderAtaque()
 	}
 
@@ -110,6 +105,9 @@ class Dimachaerus inherits Gladiador{
 	}
 
 	override method poderArmas() {
+		if (armas.isEmpty()) 
+			throw new GladiadorDesarmadoException() 
+	
 		return armas.sum({ unArma => unArma.poderAtaque() })
 	}
 
