@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import gladiador.*
 import armas.*
 
@@ -76,4 +77,64 @@ test "el mas fuerte del grupo es el dimachaerus" {
 	assert.equals(dima, grupo.masFuerte())
 }
 
+=======
+import fixture.*
+import gladiadorHerencia.*
+
+test "un Mirmillon con hacha y escudo tiene poderAtaque 22" {
+	const mirmi = fixture.crearMirmiConHacha()
+	assert.equals(22, mirmi.poderAtaque())
+}
+
+test "un Mirmillon con hacha y escudo tiene defensa 26.5" {
+	const mirmi = fixture.crearMirmiConHacha()
+	assert.equals(26.5, mirmi.defensa())
+}
+
+test "un Dimachearus con 2 armas contundentes de peso 10 y 20 tiene poderAtaque 40" {
+	const dima = fixture.crearDimaConMartillos()
+	assert.equals(40, dima.poderAtaque())
+}
+test "un Dimachearus con destreza 10 tiene defensa 5" {
+	const dima = fixture.crearDimaConMartillos()
+	assert.equals(5, dima.defensa())
+}
+
+test "un Mirmillon con hacha y escudo ataca a un demicherius con destreza 10 y este queda con 83 vida"
+{
+	const mirmi = fixture.crearMirmiConHacha()
+	const dima = fixture.crearDimaConMartillos()
+	mirmi.atacar(dima)
+	assert.equals(83, dima.vida())
+}
+
+test "el grupo que arma un mirmillon y un dimachaerus se llama mirmillolandia" {
+	const mirmi = fixture.crearMirmiConHacha()
+	const dima = fixture.crearDimaConMartillos()
+	const grupo = mirmi.armarGrupoCon(dima)
+	assert.equals("Mirmillolandia", grupo.nombre())
+}
+
+test "el grupo que arma un dimachaerus y un mirmillon se llama D-62" {
+	const mirmi = fixture.crearMirmiConHacha()
+	const dima = fixture.crearDimaConMartillos()
+	const grupo = dima.armarGrupoCon(mirmi)
+	assert.equals("D-62", grupo.nombre())
+}
+
+test "el mas fuerte del grupo es el dimachaerus" {
+	const mirmi = fixture.crearMirmiConHacha()
+	const dima = fixture.crearDimaConMartillos()
+	const grupo = dima.armarGrupoCon(mirmi)
+	assert.equals(dima, grupo.masFuerte())
+}
+
+test "un gladiador muerto no ataca" {
+	var dima = fixture.crearDimaConMartillos()
+	var mirmi = fixture.crearMirmiConHacha()
+	10.times{dima.atacar(mirmi)}
+	assert.throwsExceptionWithType( new GladiadorMuertoException(""), {mirmi.atacar(dima)}) 
+	//assert.throwsExceptionWithType( new GladiadorMuertoException(), {mirmi.atacar(dima)}) 
+	//assert.throwsException({mirmi.atacar(dima)}) 
+>>>>>>> branch 'master' of https://github.com/wollok/Clases-Coliseo.git
 }
