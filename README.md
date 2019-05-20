@@ -1,4 +1,7 @@
 # El Coliseo 
+ 
+[![Build Status](https://travis-ci.org/wollok/clasesColiseo.svg?branch=master)](https://travis-ci.org/wollok/clasesColiseo)
+
 
 ## Clases constructores
 ![Coliseo](https://thumbs.dreamstime.com/t/dibujo-del-coliseo-ejemplo-de-colosseum-en-roma-italia-65506949.jpg)
