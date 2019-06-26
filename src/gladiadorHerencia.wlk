@@ -2,15 +2,13 @@ import armas.*
 import coliseo.*
 
 class Gladiador {
-	var destreza
-	var fuerza
+	var property destreza = 15
+	var fuerza = 10
 	var vida = 100
 	
 	method vida() {	return vida	}
 	
 	method puedeCombatir() {return vida > 0}
-	
-	method destreza() {return destreza}
 	
 	method curar(){
 		vida = 100
@@ -54,12 +52,9 @@ class Mirmillon inherits Gladiador {
 	var arma
 	var armadura
 
-	constructor(laFuerza, unArma, unaArmadura) {
-		fuerza = laFuerza 
-		arma = unArma 
-		armadura = unaArmadura
-		destreza = 15
-	}
+	//initalize {
+	//	destreza = 15
+	//}
 
 	override method poderArmas() {
 		return arma.poderAtaque()
@@ -78,7 +73,7 @@ class Mirmillon inherits Gladiador {
 	}
 
 	override method crearGrupo(gladiador) {
-		return new Grupo("Mirmillolandia")
+		return new Grupo( nombre = "Mirmillolandia")
 	}
 	
 }
@@ -86,10 +81,9 @@ class Mirmillon inherits Gladiador {
 class Dimachaerus inherits Gladiador{
 	var armas = [ ]
 
-	constructor(unaDestreza) {
-		destreza = unaDestreza
-		fuerza = 10
-	}
+	//initialize {
+	//	fuerza = 10
+	//}
 
 	method arma(nuevaArma) {
 		armas.add(nuevaArma)
@@ -109,7 +103,7 @@ class Dimachaerus inherits Gladiador{
 	}
 	
 	override method crearGrupo(gladiador) {
-		return new Grupo("D-"+(self.poderAtaque()+gladiador.poderAtaque()))
+		return new Grupo(nombre = "D-"+(self.poderAtaque()+gladiador.poderAtaque()))
    }
 }
 

@@ -8,23 +8,23 @@ describe "test" {
 	var grupo
 	
 	method crearMirmiConHacha(){
-		const hacha = new ArmaFilosa(2, 1)
-		return new Mirmillon(20, hacha, escudo)
+		const hacha = new ArmaFilosa(longitud = 2, filo = 1)
+		return new Mirmillon(fuerza = 20, arma = hacha, armadura = escudo)
 	}
 	method crearDimaConMartillos(){
-		dima = new Dimachaerus(10) 
-		dima.arma(new ArmaContundente(10))
-		dima.arma(new ArmaContundente(20))
+		dima = new Dimachaerus(destreza = 10) 
+		dima.arma(new ArmaContundente(peso = 10))
+		dima.arma(new ArmaContundente(peso = 20))
 		return dima
 	}
 	
 	method crearMirmiConCasco(){
-		return new Mirmillon(20, new ArmaContundente(20), casco)
+		return new Mirmillon(fuerza = 20, arma = new ArmaContundente(peso =20), armadura = casco)
 	}
 	
 	method crearDimaMuyArmado(){
-		dima = new Dimachaerus(10) 
-		10.times{dima.arma(new ArmaFilosa(3,2))}
+		dima = new Dimachaerus(destreza = 10) 
+		10.times{dima.arma(new ArmaFilosa(longitud = 3, filo = 2))}
 		return dima
 	}
 

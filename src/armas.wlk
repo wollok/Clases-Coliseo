@@ -2,10 +2,6 @@ class ArmaFilosa {
 	var longitud
 	var filo
 
-	constructor(long, fi) {
-		filo = fi 
-		longitud = long
-	}
 	method poderAtaque() {
 		return longitud * filo
 	}
@@ -13,10 +9,6 @@ class ArmaFilosa {
 
 class ArmaContundente {
 	var peso
-
-	constructor(nuevoPeso) {
-		peso = nuevoPeso
-	}
 
 	method poderAtaque() {
 		return peso

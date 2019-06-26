@@ -2,23 +2,13 @@ import armas.*
 import coliseo.*
 
 class Mirmillon {
-	const destreza = 15
-	var vida = 100
-	var fuerza
+	const property destreza = 15
+	var property vida = 100
+	var fuerza = 10
 	var arma
 	var armadura
 
-	constructor(laFuerza, unArma, unaArmadura) {
-		fuerza = laFuerza 
-		arma = unArma 
-		armadura = unaArmadura
-	}
-
-	method vida() {	return vida	}
-	
 	method puedeCombatir() {return vida > 0}
-
-	method destreza() {	return destreza }
 
 	method poderAtaque() {
 		return arma.poderAtaque() + fuerza
@@ -28,13 +18,6 @@ class Mirmillon {
 		return armadura.defensa(self) + self.destreza()
 	}
 
-	method arma(armaNueva) {
-		arma = armaNueva
-	}
-
-	method armadura(nueva) {
-		armadura = nueva
-	}
 	method atacar(unGladiador) {
 		unGladiador.recibirAtaque(self.poderAtaque())
 	}
@@ -52,7 +35,7 @@ class Mirmillon {
 		vida = 100
 	}
 	method armarGrupoCon(gladiador) {
-		const grupo = new Grupo("Mirmillolandia")
+		const grupo = new Grupo(nombre = "Mirmillolandia")
 		grupo.agregarGladiador(self)
 		grupo.agregarGladiador(gladiador)
 		return grupo
@@ -64,13 +47,8 @@ class Dimachaerus {
 	var destreza
 	const fuerza = 10
 	var armas = [ ]
-	var vida = 100
+	var property vida = 100
 
-	constructor(unaDestreza) {
-		destreza = unaDestreza
-	}
-
-	method vida() {	return vida	}
 	
 	method puedeCombatir() {return vida > 0}
 
@@ -108,7 +86,7 @@ class Dimachaerus {
 		vida = 100
 	}
 	method armarGrupoCon(gladiador) {
-		const grupo = new Grupo("D-"+(self.poderAtaque()+gladiador.poderAtaque()))
+		const grupo = new Grupo(nombre = "D-"+(self.poderAtaque()+gladiador.poderAtaque()))
 		grupo.agregarGladiador(self)
 		grupo.agregarGladiador(gladiador)
 		return grupo

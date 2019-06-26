@@ -1,12 +1,7 @@
 
 class Grupo {
 	const gladiadores = []
-	var nombre
-	
-	constructor(nom){
-		nombre = nom
-	}
-	method nombre() { return nombre }
+	var property nombre
 	
 	method agregarGladiador(gladiador) {
 		gladiadores.add(gladiador)
