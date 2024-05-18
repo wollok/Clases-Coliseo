@@ -1,6 +1,6 @@
 # El Coliseo 
  
-[![Build Status](https://travis-ci.org/wollok/clasesColiseo.svg?branch=master)](https://travis-ci.org/wollok/clasesColiseo)
+[![Build Status](https://github.com/wollok/clasesColiseo/actions/workflows/ci.yml/badge.svg)](https://github.com/wollok/clasesColiseo/actions/workflows/ci.yml)
 
 
 ## Clases constructores
