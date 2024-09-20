@@ -3,7 +3,7 @@
 [![Build Status](https://github.com/wollok/clasesColiseo/actions/workflows/ci.yml/badge.svg)](https://github.com/wollok/clasesColiseo/actions/workflows/ci.yml)
 
 
-## Clases constructores
+## Clases 
 ![Coliseo](https://thumbs.dreamstime.com/t/dibujo-del-coliseo-ejemplo-de-colosseum-en-roma-italia-65506949.jpg)
   
 **Construido en el siglo I y ubicado en el centro de la Ciudad de Roma, es actualmente una de las siete maravillas del mundo moderno pero en sus inicios era un anfiteatro ideal para presenciar peleas de gladiadores y otros espectáculos públicos.**
