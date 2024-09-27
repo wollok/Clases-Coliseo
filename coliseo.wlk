@@ -9,11 +9,20 @@ class Grupo {
 	method quitarGladiador(gladiador) {
 		gladiadores.remove(gladiador)
 	}
-	method masFuerte(){
-		var gladiadoresDisponibles = gladiadores.filter{gla=>gla.puedeCombatir()}
-		if (gladiadoresDisponibles.isEmpty()) throw new Exception("No hay gladiadores que puedan combatir") 
-		return gladiadoresDisponibles.max{gla=>gla.poderAtaque()}
+	// method masFuerte(){
+	// 	var gladiadoresDisponibles = gladiadores.filter{gla=>gla.puedeCombatir()}
+	// 	if (gladiadoresDisponibles.isEmpty()) throw new Exception("No hay gladiadores que puedan combatir") 
+	// 	return gladiadoresDisponibles.max{gla=>gla.poderAtaque()}
+	// }
+	method masFuerte() {
+		var vivos = gladiadores.filter{gla=>gla.puedeCombatir()}
+		
+		if ( vivos.isEmpty())
+			throw new DomainException(message="no hay gladiadores vivos en el grupo")
+	    
+		return vivos.max{gla=>gla.poderAtaque()}
 	}
+
 	method combatir(adversario){
 		3.times{
 			self.masFuerte().pelear(adversario.masFuerte())

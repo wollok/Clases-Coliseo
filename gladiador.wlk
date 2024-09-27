@@ -8,15 +8,11 @@ class Mirmillon {
 	var arma
 	var armadura
 
-	method puedeCombatir() {return vida > 0}
+	method puedeCombatir() = vida > 0
 
-	method poderAtaque() {
-		return arma.poderAtaque() + fuerza
-	}
+	method poderAtaque() = arma.poderAtaque() + fuerza
 
-	method defensa() {
-		return armadura.defensa(self) + self.destreza()
-	}
+	method defensa() = armadura.defensa(self) + destreza
 
 	method atacar(unGladiador) {
 		unGladiador.recibirAtaque(self.poderAtaque())
@@ -50,7 +46,7 @@ class Dimachaerus {
 	var property vida = 100
 
 	
-	method puedeCombatir() {return vida > 0}
+	method puedeCombatir() = vida > 0
 
 	method arma(nuevaArma) {
 		armas.add(nuevaArma)
@@ -60,9 +56,8 @@ class Dimachaerus {
 		armas.remove(arma)
 	}
 
-	method poderAtaque() {
-		return fuerza + armas.sum({ unArma => unArma.poderAtaque() })
-	}
+	method poderAtaque() =
+		 fuerza + armas.sum({ unArma => unArma.poderAtaque() })
 
 	method atacar(unGladiador) {
 		unGladiador.recibirAtaque(self.poderAtaque())
@@ -72,9 +67,8 @@ class Dimachaerus {
 	method recibirAtaque(poderAtaque) {
 		vida = vida - ( poderAtaque - self.defensa() )
 	}
-	method defensa() {
-		return destreza / 2
-	}
+	method defensa() = destreza / 2
+	
 	method pelearContra(unGladiador) {
 		self.atacar(unGladiador)
 		unGladiador.atacar(self)
@@ -91,4 +85,10 @@ class Dimachaerus {
 		grupo.agregarGladiador(gladiador)
 		return grupo
 	}
+	method armarGrupo(gladiador) =
+		new Grupo(
+			nombre = "D-"+(self.poderAtaque()+gladiador.poderAtaque()),
+			gladiadores = [self,gladiador]
+			)
+
 }

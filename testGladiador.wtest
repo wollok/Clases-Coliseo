@@ -1,5 +1,5 @@
-//import gladiador.*
-import gladiadorHerencia.*
+import gladiador.*
+//import gladiadorHerencia.*
 import armas.*
 
 describe "test" {
@@ -75,6 +75,14 @@ test "el mas fuerte del grupo es el dimachaerus" {
 	dima = self.crearDimaConMartillos()
 	grupo = dima.armarGrupoCon(mirmi)
 	assert.equals(dima, grupo.masFuerte())
+}
+test "cuando el grupo no tiene uno mas fuerte, se produce una excepcion" {
+	mirmi = self.crearMirmiConHacha()
+	dima = self.crearDimaConMartillos()
+	mirmi.vida(-1)
+	dima.vida(-1)
+	grupo = dima.armarGrupoCon(mirmi)
+	assert.throwsExceptionWithType(new DomainException(), {grupo.masFuerte()})
 }
 
 
